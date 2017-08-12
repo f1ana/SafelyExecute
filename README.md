@@ -15,12 +15,15 @@ This package contains extension methods that will work on any object, a static c
 
 *Standard generic usage*
 
-	   public SafelyExecuteGenericResult<int> ThisGenericWorks() {
+	public SafelyExecuteGenericResult<int> ThisGenericWorks() {
+	   // The result value within the return object will be -1!
+	   // It will also contain successful = false and raisedException = new Exception("oops")
            return SafelyExecute(Private_ThisGenericWorks, Private_ThisGenericWorksFailed);
        }
 
        private int Private_ThisGenericWorks() {
-           return 1;
+           throw new Exception("oops");
+	   return 1;
        }
        private int Private_ThisGenericWorksFailed() {
            return -1;
@@ -38,6 +41,7 @@ This package contains extension methods that will work on any object, a static c
            return -1;
        });
        // Async using extension method!
+       // This will return 1
        SafelyExecuteGenericResult<int> r = await this.SafelyExecuteAsync(x, y);
 
 *Overriding methods to add centralized logging*
