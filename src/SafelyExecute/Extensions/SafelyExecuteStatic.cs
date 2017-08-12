@@ -15,7 +15,7 @@ namespace SafelyExecute.Extensions {
             }
         }
 
-        public static async Task<SafelyExecuteResult> SafelyExecuteAsync(Func<Task> method, Func<Task> failMethod = null) {
+        public static async Task<SafelyExecuteResult> SafelyExecuteAsync(this object obj, Func<Task> method, Func<Task> failMethod = null) {
             try {
                 await method();
                 return new SafelyExecuteResult {Successful = true};
@@ -53,7 +53,7 @@ namespace SafelyExecute.Extensions {
             }
         }
 
-        public static async Task<SafelyExecuteGenericResult<T>> SafelyExecuteAsync<T>(Func<Task<T>> method,
+        public static async Task<SafelyExecuteGenericResult<T>> SafelyExecuteAsync<T>(this object obj, Func<Task<T>> method,
             Func<Task<T>> failMethod = null) {
             try {
                 var retVal = await method();

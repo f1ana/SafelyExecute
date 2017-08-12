@@ -10,6 +10,7 @@
     <Description>A simple, extensible approach to reduce try..catch boilerplate.</Description>
     <Company />
     <Copyright>MIT License</Copyright>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
