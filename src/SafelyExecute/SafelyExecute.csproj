@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;net45;net46</TargetFrameworks>
+    <Authors>Christopher Flanagan</Authors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/f1ana/SafelyExecute</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/f1ana/SafelyExecute/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>try catch safely execute aspect</PackageTags>
+    <Description>A simple, extensible approach to reduce try..catch boilerplate.</Description>
+    <Company />
+    <Copyright>MIT License</Copyright>
   </PropertyGroup>
 
 </Project>
